@@ -1,0 +1,12 @@
+def square_number():
+    # Get user input
+    num = float(input("Enter a number to square: "))
+    
+    # Calculate the square of the number
+    squared_num = num ** 2
+    
+    # Display the result
+    print(f"The square of {num} is {squared_num}")
+
+# Call the function
+square_number()
