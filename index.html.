@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Number Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        #result {
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Square Number Calculator</h2>
+        <input type="number" id="numInput" placeholder="Enter a number" />
+        <button id="calculateButton">Calculate Square</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('calculateButton').addEventListener('click', function() {
+            // Get the user input value
+            const num = parseFloat(document.getElementById('numInput').value);
+            
+            // Check if the input is a valid number
+            if (!isNaN(num)) {
+                // Calculate the square of the number
+                const squaredNum = num ** 2;
+                
+                // Display the result
+                document.getElementById('result').innerText = `The square of ${num} is ${squaredNum}`;
+            } else {
+                document.getElementById('result').innerText = "Please enter a valid number.";
+            }
+        });
+    </script>
+</body>
+</html>
