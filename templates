@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,27 +33,13 @@
 <body>
     <div class="container">
         <h2>Square Number Calculator</h2>
-        <input type="number" id="numInput" placeholder="Enter a number" />
-        <button id="calculateButton">Calculate Square</button>
-        <div id="result"></div>
+        <form action="/calculate" method="POST">
+            <input type="number" name="num" placeholder="Enter a number" required />
+            <button type="submit">Calculate Square</button>
+        </form>
+        {% if result is not none %}
+            <div id="result">The square of the number is: {{ result }}</div>
+        {% endif %}
     </div>
-
-    <script>
-        document.getElementById('calculateButton').addEventListener('click', function() {
-            // Get the user input value
-            const num = parseFloat(document.getElementById('numInput').value);
-            
-            // Check if the input is a valid number
-            if (!isNaN(num)) {
-                // Calculate the square of the number
-                const squaredNum = num ** 2;
-                
-                // Display the result
-                document.getElementById('result').innerText = `The square of ${num} is ${squaredNum}`;
-            } else {
-                document.getElementById('result').innerText = "Please enter a valid number.";
-            }
-        });
-    </script>
 </body>
 </html>
